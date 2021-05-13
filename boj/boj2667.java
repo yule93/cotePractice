@@ -6,7 +6,7 @@ public class boj2667 {
     static int[] dx = {0, 0, -1, 1};    // 상하좌우 순 
     static int[] dy = {1, -1, 0, 0};
 
-    public static void main(String args) throws Exception {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
