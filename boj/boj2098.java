@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 import java.util.Arrays;
 
-// BOJ 2098: 외판원 순회, TSP(Traveling Salesman problem), 다익스트라
+// BOJ 2098: 외판원 순회, TSP(Traveling Salesman problem), 다익스트라, 비트마스크
 public class boj2098 {
     static int N;
     static int[][] cost, dp;
@@ -20,7 +20,6 @@ public class boj2098 {
 		dp = new int[N][(1 << N) - 1];
         cost = new int[N][N];
 
-        StringTokenizer st;
         for(int i = 0; i < N; i++) {
             String[] input = br.readLine().split(" ");
 			for (int j = 0; j < N; j++) {
@@ -32,7 +31,7 @@ public class boj2098 {
 			Arrays.fill(dp[i], MAX);
 		}
 
-		bw.write(dfs(0, 1) + "\n");
+		bw.write(dfs(1, 0) + "\n");
 		bw.flush();
         bw.close();
         br.close();
@@ -51,7 +50,7 @@ public class boj2098 {
 
 		for (int i = 0; i < N; i++) {
 			if ((k & (1 << i)) == 0 && cost[node][i] != 0) {
-				dp[node][k] = Math.min(dp[node][k], dfs(i, k | (1 << i)) + cost[node][i]);
+				dp[node][k] = Math.min(dp[node][k], dfs(k | (1 << i), i) + cost[node][i]);
 			}
 		}
 
