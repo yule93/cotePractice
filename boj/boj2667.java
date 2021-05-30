@@ -2,6 +2,7 @@ package boj;
 import java.util.*;
 import java.io.*;
 
+// BOJ 2667: 단지번호 붙이기, BFS or DFS
 public class boj2667 {
     static int[] dx = {0, 0, -1, 1};    // 상하좌우 순 
     static int[] dy = {1, -1, 0, 0};
@@ -14,9 +15,9 @@ public class boj2667 {
         int[][] map = new int[N][N];
 
         for(int i = 0; i < N; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
+            String st = br.readLine();
             for(int j = 0; j < N; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken());
+                map[i][j] = Integer.parseInt(st.substring(j, j+1));
             }
         }
 
@@ -25,12 +26,14 @@ public class boj2667 {
         int cnt, mark = 1;
 
         for(int i = 0; i < N; i++) {
-            for(int j = 0; j < N; i++) {
+            for(int j = 0; j < N; j++) {
                 if(map[i][j] == 1) {
                     cnt = 1;
                     mark++;
+
                     q.add(new pos(i, j));
                     map[i][j] = mark;
+                    //System.out.println(mark);
 
                     while(!q.isEmpty()) {
                         pos now = q.poll();
@@ -52,6 +55,7 @@ public class boj2667 {
                 }
             }
         }
+        mark -= 1;
 
         StringBuilder sb = new StringBuilder();
         sb.append(mark);
