@@ -33,7 +33,6 @@ public class boj2667 {
 
                     q.add(new pos(i, j));
                     map[i][j] = mark;
-                    //System.out.println(mark);
 
                     while(!q.isEmpty()) {
                         pos now = q.poll();
@@ -59,6 +58,8 @@ public class boj2667 {
 
         StringBuilder sb = new StringBuilder();
         sb.append(mark);
+
+        Collections.sort(arr);
 
         for(int i = 0; i < mark; i++) {
             sb.append("\n"+arr.get(i));
