@@ -33,7 +33,7 @@ public class boj1987 {
             }
         }
         visited[map[0][0] - 'A'] = true;
-        dfs(0, 0, 1);
+        dfs(1, 0, 0);
 
         bw.write(String.valueOf(answer));
         bw.flush();
@@ -51,7 +51,7 @@ public class boj1987 {
 
             if((nx >= 0 && nx < R && ny >= 0 && ny < C) && !visited[map[nx][ny] - 'A']) {
                 visited[map[nx][ny] - 'A'] = true;
-                dfs(nx, ny, count+1);
+                dfs(count+1, nx, ny);
                 visited[map[nx][ny] - 'A'] = false;
             } 
         }
