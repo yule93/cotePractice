@@ -1,6 +1,6 @@
 package programmers;
 
-class Solution {
+class SolutionChangeGualho {
     
     // 변환 과정에 맞게 u를 변환하는 메소드. 첫 번째와 마지막 문자를 제외하고 반복
     public static String reverse(String str){
