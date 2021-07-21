@@ -2,6 +2,7 @@ package SWEA;
 
 import java.util.Scanner;
 
+// 2072번: 홀수 합 구하기(단순구현)
 public class swea2072 {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
