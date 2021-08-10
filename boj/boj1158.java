@@ -14,12 +14,12 @@ public class boj1158 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringBuilder sb = new StringBuilder("");
         sb.append("<");
-
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());       // N명의 사람
-        int K = Integer.parseInt(st.nextToken());       // K번째 사람 제거
-
-        // 3 6 9 12 15 18 21
+        int K = Integer.parseInt(st.nextToken());       // K번째 사람 제거  
+        
+        /*
+        // 첫 번째 가장 무난한 queue 쓰는 방법. 그러나 느리다.      
         Queue<Integer> que = new LinkedList<>();
         for(int i = 1; i <= N; i++) {
             que.offer(i);
@@ -33,7 +33,17 @@ public class boj1158 {
 
         //sb.delete(sb.length() - 2, sb.length());
         sb.append(que.poll()).append(">");
+        */
 
+        // 두 번째 방법. linkedlist 사용하기. 개빠르다. 그리고 더 간결....
+        LinkedList<Integer> list = new LinkedList<>();
+        for(int i = 1; i <= N; i++) list.add(i);
+        int i = 0, count = 0;
+        while(list.size() != 1) {
+            i = (i+K-1) % list.size();
+            sb.append(list.remove(i)).append(", ");
+        }
+        sb.append(list.removeFirst()).append(">");
         bw.write(sb.toString());
         bw.flush();
         bw.close();
