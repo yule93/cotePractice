@@ -23,11 +23,12 @@ public class boj3040 {
         for(int i = 1; i < 1 << N; i++) {
             if(bitCount(i) == 7) {
                 int sum = 0;
+                int count = 0;
                 for(int j = 0; j < N; j++) {
                     if((i & 1<<j) > 0) {
-                        //System.out.println(j+"번째 난쟁이");
                         sum += people[j];
-                        if(sum == 100) {
+                        count++;
+                        if(count == 7 && sum == 100) {
                             answer = i;
                             break;
                         }
