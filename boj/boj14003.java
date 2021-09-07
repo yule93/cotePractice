@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -12,56 +11,48 @@ public class boj14003 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringBuilder sb;
+        StringBuilder sb = new StringBuilder();
 
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(Integer.MIN_VALUE);
-
-        int N = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int[] num = new int[N];
-        int val = 0;
-        int[] preInd = new int[N];
-        int index = arr.size() - 1;
-        Stack<Integer> stack = new Stack<>();
+        for(int i = 0; i < n; i++) arr[i]=Integer.parseInt(st.nextToken());
 
-        for(int i = 0; i < N; i++) {
-            val = Integer.parseInt(st.nextToken());
-            num[i] = val;
+        int[] index=new int[n];
+        for(int i = 0; i < n; i++) index[i]=i;
+        
+        int[] list=new int[n];
+        int idx = 0;
 
-            if(arr.get(arr.size()-1) < val) {
-                arr.add(val);
-                preInd[i] = arr.size() - 1;
-            } else {        // 이분(이진) 탐색 부분
-                int left = 1;
-                int right = arr.size() - 1;
-
-                while(left < right) {
-                    int mid = (left+right)/2;
-                    if(arr.get(mid) < val) {
-                        left = mid+1;
-                    } else right = mid;
+        list[idx++] = arr[0];
+        for(int i=1;i<n;i++){
+            if(list[idx-1]<arr[i]) {
+                index[i]=idx;
+                list[idx++]=arr[i];
+            }
+            else{
+                int s=0;
+                int e=idx-1;
+                while(s<e){
+                    int m=(s+e)>>1;
+                    if(list[m]<arr[i]) s=m+1;
+                    else e=m;
                 }
-
-                arr.set(right, val);        // 리스트에서의 자신의 위치 기록
-                preInd[i] = right;
+                index[i]=e;
+                list[e]=arr[i];
             }
         }
-
-        sb = new StringBuilder();
-        sb.append(arr.size() - 1 + "\n");
-
-        for(int i = N-1; i >= 0; i--) {
-            if(preInd[i] == index) {    // 찾는 인덱스에 도달했을 떄,
-                stack.push(num[i]);
-                index--;
+        int t=idx-1;
+        Stack<Integer> s=new Stack<>();
+        for(int i=n-1;i>=0;i--){
+            if(index[i]==t){
+                s.push(arr[i]);
+                t--;
             }
         }
-
-        while(!stack.isEmpty()) {
-            sb.append(stack.pop() + " ");
-            // System.out.println("Test");
-        }
+        sb.append(idx+"\n");
+        
+        while(!s.isEmpty()) sb.append(s.pop()+" ");
 
         bw.write(sb.toString());
         bw.flush();

@@ -29,33 +29,30 @@ public class swea5215 {
                 st = new StringTokenizer(br.readLine());
                 taste[i] = Integer.parseInt(st.nextToken());
                 cal[i] = Integer.parseInt(st.nextToken());
-                // System.out.println(taste[i] + ", " + cal[i]);
                 for(int j = 0; j < L; j++) {
                     tasteDP[i][j] = -1;
                 }
             }
-            
             knapsack(0, L);
-
             StringBuilder sb = new StringBuilder("");
-            sb.append("#" + TC + " " + answer);
+            sb.append("#").append(TC).append(" ").append(answer).append("\n");
             bw.write(sb.toString());
 		}       // 입력받은 TC만큼
-
         bw.flush();
         bw.close();
         br.close();
 	}   // end of main
 
     // DP(knapsack) 처리 해주는 메서드
-    static int knapsack(int idx, int remain) {
-		if(idx == N) return 0;
-		int temp = tasteDP[idx][remain];
+    static int knapsack(int index, int remain) {
+		if(index == N) return 0;
+		int temp = tasteDP[index][remain];
 		if(temp != -1) return temp;
-		if(cal[idx] <= remain) temp = knapsack(idx + 1, remain - cal[idx]) + taste[idx];
-		temp = Math.max(temp, knapsack(idx + 1, remain));
+		if(cal[index] <= remain) temp = knapsack(index + 1, remain - cal[index]) + taste[index];
+		temp = Math.max(temp, knapsack(index + 1, remain));
 		answer = Math.max(answer, temp);
-		return tasteDP[idx][remain] = temp;
+        System.out.println(taste[index] + ", " + cal[index] + ", " + temp + ", " + answer);
+		return tasteDP[index][remain] = temp;
 	}
 
 }       // end of class

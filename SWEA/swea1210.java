@@ -15,7 +15,7 @@ public class swea1210 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int[] dy = {0, 0, -1};
 		int[] dx = {1, -1, 0};
-		int T = 10;
+		int T = 1;
 		
 		for(int test_case = 1; test_case <= T; test_case++) {
 			int [][] ladder = new int[size][size];
@@ -51,5 +51,6 @@ public class swea1210 {
 		}
         bw.flush();
         bw.close();
+        sc.close();
     }       // end of main
 }

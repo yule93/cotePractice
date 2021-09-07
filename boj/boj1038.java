@@ -38,7 +38,6 @@ public class boj1038 {
     static void dfs(int num, int depth) {
         if(depth > 10) return;
         arr.add(num);
-
         for(int i = 0; i < 10; i++) {
             if(num % 10 > i) dfs( (num * 10)+i, depth + 1 );
         }

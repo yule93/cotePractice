@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
+// BOJ 1182: 부분수열의 합 (비트마스킹, DFS)
 public class boj1182 {
     static int[] arr;
     static boolean[] visited;

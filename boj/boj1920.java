@@ -1,5 +1,5 @@
+package boj;
 import java.io.*;
-import java.util.StringTokenizer;
 import java.util.Arrays;
 
 // 시간 초과되는 DP PS.... logN 방법인 이진탐색을 사용해야 한다.
@@ -36,6 +36,8 @@ import java.util.Arrays;
 	}
 }*/
 
+// 수 찾기
+// N개의 정수 A[1], A[2], …, A[N]이 주어져 있을 때, 이 안에 X라는 정수가 존재하는지 알아내는 프로그램을 작성하시오.
 public class boj1920{
     static int N, M;
     static int[] originArr;
@@ -54,7 +56,7 @@ public class boj1920{
         String[] compareS = br.readLine().split(" ");
         for(int i = 0; i < M; i++) {
             int temp = Integer.parseInt(compareS[i]);
-            bw.write(String.valueOf(binarySearch(temp))+"\n");      // \n 같은 띄어쓰기 잘 보자....
+            bw.write(String.valueOf(binarySearch(temp))+"\n");      // \n 같은 개행 잘 보자....
         }
         
 		bw.flush();

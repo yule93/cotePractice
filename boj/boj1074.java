@@ -28,11 +28,22 @@ public class boj1074 {
         if (size <= 1) {        // 이제 더 divide가 되지 않을 때,
             return (r * 2) + c;
         }
+
         else {
-            // r과 c를 size로 나눴다가 다시 곱하는 이유: int형이기 때문에 소수점이 떨어짐.
+            // 
             return ((r / size) * 2 * size * size)
             + ((c / size) * size * size)
             + solve(size / 2, r % size, c % size);
         }
     }
+
+    /** 비트연산으로도 계산이 가능한데 개쩐다 진짜 */
+    /* 
+        for(int i = 0; i < size; i++) {
+            answer += (((r & 1) << 1) + (c & 1) << 1);      // 와 쩐다
+            r >>= 1;
+            c >>= 1;
+            if(r == 0 && c == 0) break;
+        }
+    */
 }

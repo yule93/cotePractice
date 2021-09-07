@@ -9,8 +9,6 @@ public class boj17478 {
     public static StringBuilder build;
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-
         num = Integer.parseInt(br.readLine());        // 재귀를 반복해야하는 숫자
 
         System.out.println("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.");

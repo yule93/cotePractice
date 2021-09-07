@@ -16,18 +16,19 @@ public class swea1984 {
 
         int T = Integer.parseInt(br.readLine());
 
-        for(int tc = 1; tc <= T; tc++) {
+        for (int tc = 1; tc <= T; tc++) {
             int[] arr = new int[10];
             st = new StringTokenizer(br.readLine(), " ");
-            for(int i = 0; i < 10; i++) arr[i] = Integer.parseInt(st.nextToken());
+            for (int i = 0; i < 10; i++)
+                arr[i] = Integer.parseInt(st.nextToken());
             Arrays.sort(arr);
 
             double sum = 0;
-            for(int i = 1; i < 9; i++) {
+            for (int i = 1; i < 9; i++) {
                 sum += arr[i];
             }
-            sum /= (double)8;
-            int result = (int)Math.round(sum);
+            sum /= (double) 8;
+            int result = (int) Math.round(sum);
 
             sb.append("#").append(tc).append(" ").append(result).append("\n");
         }

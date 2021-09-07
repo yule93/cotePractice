@@ -1,0 +1,519 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch jungol1205",
+            "request": "launch",
+            "mainClass": "jungol.jungol1205",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch jungol1037",
+            "request": "launch",
+            "mainClass": "jungol.jungol1037",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2477",
+            "request": "launch",
+            "mainClass": "boj.boj2477",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1859",
+            "request": "launch",
+            "mainClass": "SWEA.swea1859",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj13300",
+            "request": "launch",
+            "mainClass": "boj.boj13300",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1979",
+            "request": "launch",
+            "mainClass": "SWEA.swea1979",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea5356",
+            "request": "launch",
+            "mainClass": "SWEA.swea5356",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch testIM1",
+            "request": "launch",
+            "mainClass": "simplePractice.testIM1",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea2005",
+            "request": "launch",
+            "mainClass": "SWEA.swea2005",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea2007",
+            "request": "launch",
+            "mainClass": "SWEA.swea2007",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj10163",
+            "request": "launch",
+            "mainClass": "boj.boj10163",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea7465",
+            "request": "launch",
+            "mainClass": "SWEA.swea7465",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch MSTKruskalTest",
+            "request": "launch",
+            "mainClass": "simplePractice.MSTKruskalTest",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch DisjointSetTest",
+            "request": "launch",
+            "mainClass": "simplePractice.DisjointSetTest",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2448",
+            "request": "launch",
+            "mainClass": "boj.boj2448",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch dfsandbfs",
+            "request": "launch",
+            "mainClass": "dfsandbfs",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1260",
+            "request": "launch",
+            "mainClass": "boj.boj1260",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch primeNumber",
+            "request": "launch",
+            "mainClass": "primeNumber",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea3234",
+            "request": "launch",
+            "mainClass": "SWEA.swea3234",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1629",
+            "request": "launch",
+            "mainClass": "boj.boj1629",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1244_1",
+            "request": "launch",
+            "mainClass": "boj.boj1244_1",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj9663",
+            "request": "launch",
+            "mainClass": "boj.boj9663",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1992",
+            "request": "launch",
+            "mainClass": "boj.boj1992",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea4012",
+            "request": "launch",
+            "mainClass": "SWEA.swea4012",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea5644",
+            "request": "launch",
+            "mainClass": "SWEA.swea5644",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch jungol1828",
+            "request": "launch",
+            "mainClass": "jungol.jungol1828",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1074",
+            "request": "launch",
+            "mainClass": "boj.boj1074",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2839",
+            "request": "launch",
+            "mainClass": "boj.boj2839",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1759",
+            "request": "launch",
+            "mainClass": "boj.boj1759",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1182",
+            "request": "launch",
+            "mainClass": "boj.boj1182",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj10974",
+            "request": "launch",
+            "mainClass": "boj.boj10974",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj17135",
+            "request": "launch",
+            "mainClass": "boj.boj17135",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1974",
+            "request": "launch",
+            "mainClass": "SWEA.swea1974",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj3040",
+            "request": "launch",
+            "mainClass": "boj.boj3040",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2961",
+            "request": "launch",
+            "mainClass": "boj.boj2961",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea5215_1",
+            "request": "launch",
+            "mainClass": "SWEA.swea5215_1",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj16926",
+            "request": "launch",
+            "mainClass": "boj.boj16926",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2563",
+            "request": "launch",
+            "mainClass": "boj.boj2563",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1158",
+            "request": "launch",
+            "mainClass": "boj.boj1158",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main_백준_1158_요세푸스문제_송민주",
+            "request": "launch",
+            "mainClass": "boj.Main_백준_1158_요세푸스문제_송민주",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1228",
+            "request": "launch",
+            "mainClass": "SWEA.swea1228",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea2499",
+            "request": "launch",
+            "mainClass": "SWEA.swea2499",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1861WrongCase",
+            "request": "launch",
+            "mainClass": "SWEA.swea1861WrongCase",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1861",
+            "request": "launch",
+            "mainClass": "SWEA.swea1861",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2493",
+            "request": "launch",
+            "mainClass": "boj.boj2493",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea2001",
+            "request": "launch",
+            "mainClass": "SWEA.swea2001",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea2805",
+            "request": "launch",
+            "mainClass": "SWEA.swea2805",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1210",
+            "request": "launch",
+            "mainClass": "SWEA.swea1210",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1954",
+            "request": "launch",
+            "mainClass": "SWEA.swea1954",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1208",
+            "request": "launch",
+            "mainClass": "SWEA.swea1208",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1244",
+            "request": "launch",
+            "mainClass": "boj.boj1244",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj17478",
+            "request": "launch",
+            "mainClass": "boj.boj17478",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch digittest1",
+            "request": "launch",
+            "mainClass": "digittest1",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea3307",
+            "request": "launch",
+            "mainClass": "SWEA.swea3307",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea1289",
+            "request": "launch",
+            "mainClass": "SWEA.swea1289",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch swea5215",
+            "request": "launch",
+            "mainClass": "SWEA.swea5215",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1697",
+            "request": "launch",
+            "mainClass": "boj.boj1697",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch ttttttt",
+            "request": "launch",
+            "mainClass": "ttttttt",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch testone",
+            "request": "launch",
+            "mainClass": "testone",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj4796",
+            "request": "launch",
+            "mainClass": "boj.boj4796",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj13334",
+            "request": "launch",
+            "mainClass": "boj.boj13334",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj14003",
+            "request": "launch",
+            "mainClass": "boj.boj14003",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1038",
+            "request": "launch",
+            "mainClass": "boj.boj1038",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1987",
+            "request": "launch",
+            "mainClass": "boj.boj1987",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2667",
+            "request": "launch",
+            "mainClass": "boj.boj2667",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2098",
+            "request": "launch",
+            "mainClass": "boj.boj2098",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2357",
+            "request": "launch",
+            "mainClass": "boj.boj2357",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1316",
+            "request": "launch",
+            "mainClass": "boj.boj1316",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1181",
+            "request": "launch",
+            "mainClass": "boj.boj1181",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj1018",
+            "request": "launch",
+            "mainClass": "boj.boj1018",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2468",
+            "request": "launch",
+            "mainClass": "boj.boj2468",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "java",
+            "name": "Launch boj2042",
+            "request": "launch",
+            "mainClass": "boj.boj2042",
+            "projectName": "cotePractice_59876924"
+        },
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

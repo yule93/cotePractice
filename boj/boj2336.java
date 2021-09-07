@@ -1,13 +1,34 @@
 package boj;
+import java.util.*;
+import java.io.*;
 
-// 세그먼트 트리는 주어진 자료의 개수가 N개라고 했을 때,
-// 최대 4N의 크기를 갖는다.
-public class segmentTree {
-    static long[] arr, tree;
-    public static void main(String[] args) {}
+// BOJ 2336, 세그먼트 트리
+public class boj2336 {
+	static long[] arr, tree;
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = Integer.parseInt(br.readLine());
+		String [] grades = new String [N];
+		HashMap<String, Boolean> map = new HashMap<String, Boolean>();
+		int bestStudent = 0;
+		
+		for (int i = 0; i < N; i++) {
+			grades[i] = br.readLine();	// 학생수 N에 따라 학생의 등수 입력받음
+		}
+		
+		for(int i = 0; i < N; i++) {
+			
+		}
 
-    // 세그먼트 트리를 만드는 함수. 노드의 높이는 H=logN이고, 필요한 배열의 크기는 2^(H+1)이다.
-    long init(int start, int end, int node) {
+		bw.write(bestStudent+"\n");
+		bw.flush();
+		br.close();
+		bw.close();
+	}
+
+	long init(int start, int end, int node) {
         if(start == end) return tree[node] = arr[start];
         int mid = (start + end) / 2;
         // 어떤 node의 번호가 x일 때, 왼쪽 자식은 2x, 오른쪽 자식은 2x+1이 된다.

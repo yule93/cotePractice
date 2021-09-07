@@ -67,4 +67,28 @@ public class swea1974 {
 
 }
 
-
+/*
+        for(int t = 1; t <= T; t++) {
+			int result = 1;
+			List<HashSet<Character>> rows = new ArrayList<>();
+			List<HashSet<Character>> cols = new ArrayList<>();
+			List<HashSet<Character>> boxes = new ArrayList<>();
+			for(int i = 0; i < n; i++) {
+				rows.add(new HashSet<Character>());
+				cols.add(new HashSet<Character>());
+				boxes.add(new HashSet<Character>());
+			}
+			for(int i = 0; i < n; i++) {
+				String str = br.readLine();
+				for(int j = 0, idx = 0; j < n; j++, idx+=2) {
+					int boxIdx = ( i / 3 ) * 3 + j / 3; 
+					char toCheck = str.charAt(idx);
+					if(!(rows.get(i).add(toCheck)) || 
+							!(cols.get(j).add(toCheck)) || 
+							!(boxes.get(boxIdx).add(toCheck))) {
+						result = 0;
+						break;
+					}
+				}
+			}
+*/

@@ -40,7 +40,6 @@ public class swea1218 {
                 }
                 //System.out.println(pairSentence.charAt(i));
             }
-            
             sb.append("#").append(tc).append(" ").append(answer).append("\n");
         }
 

@@ -27,7 +27,7 @@ public class swea2805 {
                     }
                     break;
                 }
-                while(i < N && i > N/2) {          // 각 행에서 수확할 수 있는 작물의 갯수는 (N-i)*2 + 1 
+                while(i < N && i > N/2) {          // 각 행에서 수확할 수 있는 작물의 갯수는 (N-i-1)*2 + 1 
                     st = br.readLine().substring((i - N/2), (N-1-i)*2 + 1 + (i - N/2));
                     //System.out.println(i+"번째 문자열: "+ st + ", " + (i - N/2) + ", "+ (i - N/2) + (N-i));
                     for(int j = 0; j < st.length(); j++) {

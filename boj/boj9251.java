@@ -1,7 +1,8 @@
+package boj;
 import java.util.*;
 import java.io.*;
 
-// BOJ 9251: LCS(Longest Common Subsequence)
+// BOJ 9251, 9252: LCS(Longest Common Subsequence)
 public class boj9251 {
     static int[][] dp = new int[1001][1001];
     public static void main(String[] args) throws Exception{
@@ -23,6 +24,7 @@ public class boj9251 {
         
         System.out.println(dp[a.length()][b.length()]);
         
+        // 여기부턴 9252만 함
         int i = a.length();
         int j = b.length();
         StringBuffer sb = new StringBuffer();

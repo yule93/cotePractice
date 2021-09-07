@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class boj1158 {
@@ -35,7 +36,7 @@ public class boj1158 {
         sb.append(que.poll()).append(">");
         */
 
-        // 두 번째 방법. linkedlist 사용하기. 개빠르다. 그리고 더 간결....
+        // 두 번째 방법. linkedlist 사용하기. 개빠르다. 그리고 더 간결.... 비순차적 배열보다 순차적 배열이 더 나아보임.
         LinkedList<Integer> list = new LinkedList<>();
         for(int i = 1; i <= N; i++) list.add(i);
         int i = 0, count = 0;
