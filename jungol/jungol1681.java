@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 
 // 정올 1681 해밀턴 순환회로 (다익스트라)
 // 다익스트라 생각했는데 dfs로 풀어도 되는 것 같음.... N이 작으면 dfs/bfs가 더 나음!
+// 실수한 점: 주어진 값이 두 자리 이상일 때는 charAt 생각하고 쓰던지 걍 StringTokenizer 쓰기 ㅋㅋ ㅠㅠ
 public class jungol1681 {
 
     static int map[][], cost;

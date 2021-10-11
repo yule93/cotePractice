@@ -33,9 +33,9 @@ public class jungol1121 {
 
             for (int i = 1; i <= N; i++) {
                 for (int j = 2; j <= M; j++) {
+                    // memo[j][i] = memo[j >> 1][i - 1];
                     for (int k = j; k >= 1 << (i - 1); k--) {
                         memo[j][i] += memo[k >> 1][i - 1];
-                        // System.out.println(j + ", " + i + ": " + memo[j][i]);
                     }
                 }
             }
