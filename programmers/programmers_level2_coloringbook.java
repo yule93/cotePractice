@@ -42,9 +42,6 @@ public class programmers_level2_coloringbook {
           q.add(new int[] { i, j });
           while (q.size() > 0) {
             int[] now = q.poll();
-            if(!checked[now[0]][now[1]]) areaSize++;
-            // System.out.println(now[0]+", "+now[1]);
-            checked[now[0]][now[1]] = true;
 
             for (int d = 0; d < 4; d++) {
               int ny = now[0] + dy[d];
@@ -53,6 +50,8 @@ public class programmers_level2_coloringbook {
                 continue;
               if (!checked[ny][nx] && p[now[0]][now[1]] == p[ny][nx]) {
                 q.add(new int[] { ny, nx });
+                checked[ny][nx] = true;
+                areaSize++;
               }
             }
           }
