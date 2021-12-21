@@ -49,6 +49,7 @@ public class boj15681 {
 
   public static int dfs(int now) {
     // 이미 방문한 노드면 패스
+    // 
     if (dp[now] != 0)
       return dp[now];
     
@@ -66,5 +67,4 @@ public class boj15681 {
     dp[now] = count;
     return dp[now];
   }
-
 }
