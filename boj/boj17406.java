@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // boj 17406 배열돌리기 4(시뮬레이션, DFS)
+// 304ms
 public class boj17406 {
   static int N, M, K, min;
   static int[][] arr, rotationInfo;
@@ -63,9 +64,9 @@ public class boj17406 {
 
       for (int roInfo = 0; roInfo < K; roInfo++) {
         // r은 순열 번째수
-        int nr = rotationInfo[roInfo][0];
-        int nc = rotationInfo[roInfo][1];
-        int ns = rotationInfo[roInfo][2];
+        int nr = rotationInfo[per[roInfo]][0];
+        int nc = rotationInfo[per[roInfo]][1];
+        int ns = rotationInfo[per[roInfo]][2];
 
         for (int count = 0; count < ns; count++) {
           int r = nr - ns - 1 + count;
