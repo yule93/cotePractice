@@ -6,107 +6,180 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-// boj 13460 구슬 탈출 2 (시뮬레이션, pq)
+// boj 13460 구슬 탈출 2 (시뮬레이션, bfs, 백트래킹)
+// boj 16197 두 동전과 비슷한 풀이로 진행됨
+// 132ms....
+// * 98번째 continue를 어디로 할지 헤매지 않았으면 해결 금방 했을 문제.... inloop로 해야 사방탐색이 가능한데 loop로 넘겨줘서 사방 탐색을 못했음....
 public class boj13460 {
   static int[] dy = { 0, 0, 1, -1 }; // 좌우상하
   static int[] dx = { 1, -1, 0, 0 };
-  static boolean[][][][] visited;
-  static int min = 123_456_789;
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer st = new StringTokenizer(br.readLine());
+    int N = Integer.parseInt(st.nextToken());
+    int M = Integer.parseInt(st.nextToken());
 
-    int N = Integer.parseInt(st.nextToken()); // 3~10
-    int M = Integer.parseInt(st.nextToken()); // 3~10
-
-    // * '.'은 빈 칸을 의미하고, '#'은 공이 이동할 수 없는 장애물 또는 벽을 의미하며, 'O'는 구멍의 위치를 의미한다. 'R'은 빨간
-    // 구슬의 위치, 'B'는 파란 구슬의 위치
-    int ry = 0, rx = 0, by = 0, bx = 0;
-    visited = new boolean[N][M][N][M];
-    String[][] map = new String[N][M];
+    int[] marblePos = new int[4];
+    int[] hole = new int[2];
+    char[][] map = new char[N][M];
     for (int i = 0; i < N; i++) {
-      String[] strs = br.readLine().split("");
+      String line = br.readLine();
       for (int j = 0; j < M; j++) {
-        map[i][j] = strs[j];
-        if (map[i][j] == "R") {
-          ry = i;
-          rx = j;
-        } else if (map[i][j] == "B") {
-          by = i;
-          bx = j;
+        map[i][j] = line.charAt(j);
+        if (map[i][j] == 'R') {
+          marblePos[0] = i;
+          marblePos[1] = j;
+          map[i][j] = '.';
+        } else if (map[i][j] == 'B') {
+          marblePos[2] = i;
+          marblePos[3] = j;
+          map[i][j] = '.';
+        } else if (map[i][j] == 'O') {
+          hole[0] = i;
+          hole[1] = j;
         }
       }
     }
 
-    // ! bfs 시작
+    int answer = 11;
+    boolean[][][][] visited = new boolean[N][M][N][M];
     Queue<int[]> q = new LinkedList<>();
-    q.add(new int[] { ry, rx, by, bx, 0 });
-    visited[ry][rx][by][bx] = true; // 빨간 구슬과 파란구슬 방문 여부
-
-    bfs:
-    while (q.size() > 0) {
+    q.add(new int[] { marblePos[0], marblePos[1], marblePos[2], marblePos[3], 0 }); // * 맨 마지막 요소는 구슬이 이동한 횟수
+    loop: while (q.size() > 0) {
       int[] nowPos = q.poll();
-      int pCount = nowPos[4];
+      // System.out.println(nowPos[0] + ", " + nowPos[1] + ", " + nowPos[2] + ", " + nowPos[3]+ ", " + nowPos[4]);
+      if (nowPos[4] > 10 || nowPos[4] >= answer)
+        continue;
+      if (nowPos[4] + 1 > answer)
+        continue;
 
-      if (pCount >= 10) {
-        break;
-      }
+      inloop:
+      for (int i = 0; i < 4; i++) {
+        // 구슬 이동
+        int rny = nowPos[0];
+        int rnx = nowPos[1];
+        int bny = nowPos[2];
+        int bnx = nowPos[3];
+        // System.out.println(rny + ", "+ rnx+" / "+bny+", "+bnx+": "+nowPos[4]);
 
-      for (int d = 0; d < 4; d++) {
-        int nRy = nowPos[0];
-        int nRx = nowPos[1];
-        int nBy = nowPos[2];
-        int nBx = nowPos[3];
-
-        // System.out.println(nRy+", "+nRx+", "+nBy+", "+nBx);
-        // 빨간 구슬 이동
-        while (map[nRy + dy[d]][nRx + dx[d]] != "#") {
-          nRy += dy[d];
-          nRx += dx[d];
-          if (map[nRy][nRx] == "O")
+        int redC = 0; // 빨간 구슬이 움직인 거리
+        int blueC = 0; // 파란 구슬이 움직인 거리
+        while (true) {
+          rny += dy[i];
+          rnx += dx[i];
+          if (map[rny][rnx] == '#') {
+            rny -= dy[i];
+            rnx -= dx[i];
             break;
+          }
+          if (map[rny][rnx] == 'O') {
+            int res = 11;
+            if (answer < nowPos[4] + 1)
+              break loop;
+            else {
+              res = nowPos[4] + 1;
+            }
+            while (true) {
+              bny += dy[i];
+              bnx += dx[i];
+              if (map[bny][bnx] == '#') {
+                bny -= dy[i];
+                bnx -= dx[i];
+                break;
+              }
+              if (map[bny][bnx] == 'O') {
+                res = 11;
+                break;
+              }
+            }
+            answer = Math.min(answer, res);
+            // System.out.println(rny + ", "+ rnx+" / "+bny+", "+bnx+": "+answer);
+            continue inloop;
+          }
+          redC++;
         }
 
-        while (map[nBy + dy[d]][nBx + dx[d]] != "#") {
-          nBy += dy[d];
-          nBx += dx[d];
-          if (map[nBy][nBx] == "O")
+        while (true) {
+          bny += dy[i];
+          bnx += dx[i];
+          if (map[bny][bnx] == '#') {
+            bny -= dy[i];
+            bnx -= dx[i];
             break;
+          }
+          if (map[bny][bnx] == 'O') {
+            // answer = 11;
+            continue inloop;
+          }
+          blueC++;
         }
 
-        if (map[nBy][nBx] == "O")
-          continue;
-        if (map[nRy][nRx] == "O") {
-          min = Math.min(min, pCount + 1);
-          break bfs;
-        }
-
-        if (nRy >= N || nRx < 0 || nRx >= M || nRy < 0 || nBy >= N || nBy < 0 || nBx >= M || nBx < 0)
-          continue;
-
-        if (nRy == nBy && nRx == nBx && map[nRy][nRx] != "O") {
-          int redMove = Math.abs(nRy - nowPos[0]) + Math.abs(nRx - nowPos[1]);
-          int blueMove = Math.abs(nBy - nowPos[2]) + Math.abs(nBx - nowPos[3]);
-
-          // * 파란 공이 먼저 도착
-          if (redMove > blueMove) {
-            nRy -= dy[d];
-            nRx -= dx[d];
-          } else {
-            // * 빨간 공이 먼저 도착
-            nBy -= dy[d];
-            nBx -= dx[d];
+        if (rny == bny && rnx == bnx) {
+          // * 둘이 같은 위치에 도착했다면, 더 많이 움직인 쪽이 뒤쪽에 위치한 것이므로 한 바퀴 덜 감아야 함
+          if (redC > blueC) {
+            rny -= dy[i];
+            rnx -= dx[i];
+          } else if (blueC > redC) {
+            bny -= dy[i];
+            bnx -= dx[i];
           }
         }
-        
-        if (!visited[nRy][nRx][nBy][nBx]) {
-          visited[nRy][nRx][nBy][nBx] = true;
-          q.add(new int[] { nRy, nRx, nBy, nBx });
+
+        if (nowPos[2] == hole[0] && nowPos[3] == hole[1]) {
+          continue;
         }
+        if (rnx < 0 || rnx >= M || rny < 0 || rny >= N
+            || bnx < 0 || bnx >= M || bny < 0 || bny >= N)
+          continue;
+
+        if (visited[rny][rnx][bny][bnx])
+          continue;
+
+
+        visited[rny][rnx][bny][bnx] = true;
+        q.add(new int[] { rny, rnx, bny, bnx, nowPos[4] + 1 });
       }
     }
 
-    System.out.println(min == 123_456_789 ? -1 : min);
+    System.out.println(answer == 11 ? -1 : answer);
   }
 }
+
+/*
+* 틀린 tc
+9 6
+######
+##.#.#
+#.#.##
+#..#.#
+#B..##
+#R#.##
+#.##.#
+#O.###
+######
+답: 2
+
+10 9
+#########
+#R...B#.#
+#.....#.#
+#.......#
+##.#....#
+#....#..#
+#.#....O#
+##.....##
+#...##..#
+#########
+답: 4
+
+6 9
+#########
+#..#...R#
+#..##.#.#
+#.###OB.#
+####.#..#
+#########
+답: 3
+
+ */
