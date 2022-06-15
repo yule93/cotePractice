@@ -34,8 +34,8 @@ public class programmers_level3_presentationByN {
 
       // NNNN 같은 거 더하기
       int repeat = 0;
-      for (int j = 1; j <= i; j++) {
-        repeat += j * N;
+      for (int j = 0; j < i; j++) {
+        repeat += Math.pow(10, j) * N;
       }
       countSet.add(repeat);
     }
