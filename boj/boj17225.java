@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 // boj 17225 세훈이의 선물가게(우선순위 큐)
 // ! 조심해야 하는 점: 같은 시간에 포장을 시작하면 상민이가 더 일찍 들어가게 되어있음....
-// 416 ms
+// 424 ms
 public class boj17225 {
 
   public static class Order implements Comparable<Order> {
@@ -24,7 +24,8 @@ public class boj17225 {
     public int compareTo(Order o) {
       // 시작 시간이 같으면 상민이 먼저
       if (this.startTime == o.startTime) {
-        return o.color - this.color; // 양수 => 오름차순
+        // * 비교식이 잘못돼서... 지수가 먼저 뛰쳐나왔던 것....
+        return this.color - o.color; // 양수 => 오름차순
       }
       return this.startTime - o.startTime; // 시작 시간 오름차순 정렬
     }
@@ -41,18 +42,19 @@ public class boj17225 {
     ArrayList<Integer> sangmin = new ArrayList<>();
     ArrayList<Integer> jisu = new ArrayList<>();
 
-    int sangminT = 0;   // 상민이 포장 끝 시간
-    int jisuT = 0;    // 지수 포장 끝 시간
-    PriorityQueue<Order> pq = new PriorityQueue<>();    // 상민이랑 지수 우선순위 비교
+    int sangminT = 0; // 상민이 포장 끝 시간
+    int jisuT = 0; // 지수 포장 끝 시간
+    PriorityQueue<Order> pq = new PriorityQueue<>(); // 상민이랑 지수 우선순위 비교
     for (int i = 0; i < N; i++) {
       st = new StringTokenizer(br.readLine());
       int t = Integer.parseInt(st.nextToken()); // 주문 시간
       String color = st.nextToken(); // 상민인지 지수인지
       int num = Integer.parseInt(st.nextToken()); // 맡긴 선물 개수
 
-      for (int j = 0; j < num; j++) {
-        if (color.equals("B")) {
-          // * 상민이한테
+      // * 핵심 알고리즘
+      if (color.equals("B")) {
+        // * 상민이한테
+        for (int j = 0; j < num; j++) {
           if (sangminT >= t) {
             pq.add(new Order(sangminT, 'B'));
             sangminT += A;
@@ -60,8 +62,10 @@ public class boj17225 {
             pq.add(new Order(t, 'B'));
             sangminT = t + A;
           }
-        } else if (color.equals("R")) {
-          // * 지수한테
+        }
+      } else if (color.equals("R")) {
+        // * 지수한테
+        for (int j = 0; j < num; j++) {
           if (jisuT >= t) {
             pq.add(new Order(jisuT, 'R'));
             jisuT += B;
@@ -71,8 +75,9 @@ public class boj17225 {
           }
         }
       }
+
     }
-    
+
     int index = 1;
     while (pq.size() > 0) {
       Order order = pq.poll();
